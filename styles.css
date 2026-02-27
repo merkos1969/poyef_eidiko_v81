@@ -1,0 +1,82 @@
+/* Simple offline-friendly styles (no external fonts) */
+:root{
+  --bg:#0d2742;
+  --card:#102f52;
+  --card2:#0f355e;
+  --border:rgba(255,255,255,.18);
+  --text:#f4f7ff;
+  --muted:rgba(255,255,255,.70);
+  --accent:#2f7cff;
+  --green:#35d07f;
+  --danger:#e55353;
+  --shadow:0 10px 25px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--text);background:var(--bg)}
+a{color:var(--text)}
+.top{padding:18px 14px 10px;max-width:1050px;margin:0 auto}
+.brand .title{font-weight:800;letter-spacing:.5px;text-transform:uppercase;font-size:20px;line-height:1.1}
+.brand .subtitle{margin-top:6px;color:var(--muted);font-size:13px}
+.tabs{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+.tab{border:1px solid var(--border);background:rgba(255,255,255,.08);color:var(--text);
+  padding:10px 14px;border-radius:999px;cursor:pointer;font-weight:700}
+.tab.active{background:rgba(255,255,255,.92);color:#102f52;border-color:rgba(255,255,255,.92)}
+.wrap{max-width:1050px;margin:0 auto;padding:0 14px 20px}
+.card{background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:18px;padding:14px;box-shadow:var(--shadow)}
+.card2{background:rgba(0,0,0,.12);border:1px solid var(--border);border-radius:16px;padding:12px}
+.hidden{display:none}
+.row{display:flex;align-items:center}
+.between{justify-content:space-between}
+.gap{gap:10px}
+.wrapline{flex-wrap:wrap}
+.h{font-size:18px;font-weight:800}
+.h2{font-size:15px;font-weight:800;margin-bottom:6px}
+.pill{padding:8px 12px;border:1px solid var(--border);border-radius:999px;background:rgba(255,255,255,.06);font-weight:800}
+.btn{border:1px solid var(--border);background:rgba(255,255,255,.08);color:var(--text);
+  padding:10px 12px;border-radius:12px;cursor:pointer;font-weight:700}
+.btn:active{transform:scale(.99)}
+.btn.danger{background:rgba(229,83,83,.12);border-color:rgba(229,83,83,.55)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+@media (max-width:780px){.grid2{grid-template-columns:1fr}}
+.mini .k{color:var(--muted);font-weight:700}
+.big{font-size:34px;font-weight:900;margin-top:3px}
+.green{color:var(--green)}
+.small{font-size:12.5px;line-height:1.35}
+.muted{color:var(--muted)}
+.money{background:rgba(53,208,127,.10);border-color:rgba(53,208,127,.35)}
+.shifts{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.shift{border:1px solid var(--border);background:rgba(255,255,255,.08);color:var(--text);
+  padding:10px 12px;border-radius:12px;cursor:pointer;font-weight:900;min-width:54px}
+.shift.active{outline:2px solid rgba(255,255,255,.75)}
+.shift[data-shift="PR"]{background:rgba(47,124,255,.18)}
+.shift[data-shift="AP"]{background:rgba(255,153,0,.16)}
+.shift[data-shift="NY"]{background:rgba(0,164,255,.18)}
+.shift[data-shift="AD"]{background:rgba(160,180,255,.12)}
+.shift[data-shift="RP"]{background:rgba(220,220,220,.10)}
+.shift[data-shift="5M"]{background:rgba(255,70,70,.18)}
+.dow{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:8px}
+.dow > div{font-weight:900;text-align:center;padding:8px;border:1px solid var(--border);border-radius:12px;background:rgba(255,255,255,.06)}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:8px}
+.day{min-height:78px;border:2px solid rgba(255,255,255,.65);border-radius:14px;background:rgba(0,0,0,.10);
+  padding:8px;position:relative;cursor:pointer}
+.day.off{opacity:.35;cursor:default}
+.day .num{font-weight:900;font-size:16px}
+.day .lbl{position:absolute;right:8px;top:8px;font-weight:900;font-size:12px;color:rgba(255,255,255,.90)}
+.badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.badge{padding:4px 7px;border-radius:999px;font-weight:900;font-size:12px;border:1px solid rgba(255,255,255,.35)}
+.badge.PR{background:rgba(47,124,255,.85)}
+.badge.AP{background:rgba(255,153,0,.90);color:#0b1e33}
+.badge.NY{background:rgba(0,164,255,.85)}
+.badge.AD{background:rgba(160,180,255,.35)}
+.badge.RP{background:rgba(220,220,220,.22)}
+.badge.M5{background:rgba(255,70,70,.85)}
+.summary{margin-top:10px}
+.pill2{padding:8px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.06);font-size:13px}
+@media print{
+  body{background:#fff;color:#000}
+  .top,.tabs,.btn,#btnPDF,.shifts{display:none !important}
+  .card{box-shadow:none;border:none;background:#fff}
+  .day{border:1px solid #000;background:#fff}
+  .dow>div{border:1px solid #000;background:#fff}
+  .badge{border:1px solid #000}
+}
